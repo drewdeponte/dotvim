@@ -1,6 +1,8 @@
 " enable pathogen to load all the vim bundles in ~/.vim/bundle/
 call pathogen#infect()
 
+set gfn=Monaco:h15
+
 " tell vim NOT to run in Vi compatible mode
 set nocompatible
 
