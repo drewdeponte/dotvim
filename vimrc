@@ -1,6 +1,8 @@
 " enable pathogen to load all the vim bundles in ~/.vim/bundle/
 call pathogen#infect()
 
+" Set the font when using MacVim.app, this is ignored for console vim as it
+" simply uses the console font.
 set gfn=Monaco:h15
 
 " tell vim NOT to run in Vi compatible mode
@@ -51,6 +53,12 @@ set showtabline=2
 
 " Soft min width for the active window
 set winwidth=79
+
+" Soft min height for the active window
+set winheight=29
+
+" Min height for non active window
+set winminheight=5
 
 " The shell to use when using :!
 set shell=bash
