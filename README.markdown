@@ -1,10 +1,10 @@
 # My .vim files
 
-My personal `.vim` files. This repository includes my `~/.vimrc`, `~/.vim` dir, and the plugins I use as git submodules. This repository basically includes my entire vim setup so that I can easily load it onto other systems as have history of it.
+My personal `.vim` files. This repository includes my `~/.vimrc`, `~/.vim` dir, and the plugins I use as git submodules. This repository basically includes my entire vim setup so that I can easily load it onto other systems and have history of it.
 
 ## Installation:
 
-    git clone git://github.com/nelstrom/dotvim.git ~/.vim
+    git clone git://github.com/cyphactor/dotvim.git ~/.vim
 
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
