@@ -124,6 +124,10 @@ augroup vimrcEx
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
 
+  " Before writing a file check if the path for it exists. If it doesn't then
+  " mkdir -p the path so that the file can be saved.
+  autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p ".shellescape(expand('%:h'), 1) | redraw! | endif
+
   " Indent p tags, I commented the below out because I don't have the
   " dependencies necessary to get it to work and I am not sure if I
   " actually want it. I took it from the DestoryAllSoftware vimrc screencast.
@@ -132,7 +136,6 @@ augroup vimrcEx
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
 augroup END
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
