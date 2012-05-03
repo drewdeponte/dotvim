@@ -291,7 +291,7 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature$') != -1
+    if match(a:filename, '\.feature') != -1
         exec ":!script/features " . a:filename
     else
         if filereadable("script/test")
