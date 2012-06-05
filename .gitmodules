@@ -19,9 +19,6 @@
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
-[submodule "bundle/vim-taglist"]
-	path = bundle/vim-taglist
-	url = git@github.com:vim-scripts/taglist.vim.git
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = git://github.com/vim-scripts/matchit.zip.git
