@@ -213,7 +213,8 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_match_window_reversed = 0
 " set max height of match window
 let g:ctrlp_max_height = 20
-
+" tell ctrlp to ignore some files
+let g:ctrlp_custom_ignore = 'tags$\|\.DS_Store$\|\.git$'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
