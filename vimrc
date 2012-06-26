@@ -143,8 +143,13 @@ augroup END
 " http://ethanschoonover.com/solarized
 " In order to have this work properly in iTerm2 you also need to setup the
 " iTerm2 solarized color scheme.
+" set background=dark
+" colorscheme solarized
+
+" Tell it to use the ir_black color scheme
+" http://blog.toddwerth.com/entries/8
 set background=dark
-colorscheme solarized
+colorscheme ir_black
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
