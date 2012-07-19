@@ -39,6 +39,9 @@ set ignorecase smartcase
 " Highlight the line the cursor is currently on for easy spotting
 set cursorline
 
+" Highlight the column the cursor is currently on for easy spottintg
+set cursorcolumn
+
 " Make the command entry area consume two rows
 set cmdheight=2
 
@@ -148,8 +151,11 @@ augroup END
 
 " Tell it to use the ir_black color scheme
 " http://blog.toddwerth.com/entries/8
+" set background=dark
+" colorscheme ir_black
+
 set background=dark
-colorscheme ir_black
+colorscheme herald
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
