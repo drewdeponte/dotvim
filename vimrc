@@ -10,6 +10,7 @@ set nocompatible
 
 " show line numbers
 set number
+set ruler
 
 " keep buffers opened in background until :q or :q!
 set hidden
@@ -308,6 +309,52 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" function! DrewJumpToFile()
+"   let cur_line = getline(".")
+"   " :echo cur_line
+"   let match_line = matchstr(cur_line, "\v\s*Foo\w*")
+"   if empty(match_line)
+"     :echo "it did NOT matched "
+"   else
+"     :echo "it matched " . match_line
+"   endif
+" endfunction
+
+function! DrewRunTests(filename)
+    " :w
+    let winnr = bufwinnr('^_drew_run_tests_output$')
+    if ( winnr >= 0 )
+      execute winnr . 'wincmd w'
+      setlocal modifiable
+      execute 'normal ggdG'
+    else
+      botright new _drew_run_tests_output
+      setlocal modifiable
+      setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+      exec ":silent! AnsiEsc"
+    endif
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    if match(a:filename, '\.feature') != -1
+        exec ":!script/features " . a:filename
+    else
+        if filereadable("script/test")
+            exec ":!script/test " . a:filename
+        elseif filereadable("Gemfile")
+          " :cexpr system('bundle exec rspec --color '.a:filename.' 2>&1')
+            exec ":silent! read !bundle exec rspec --color --tty " . a:filename . " 2>&1"
+        else
+          " :cexpr system('rspec --color '.a:filename.' 2>&1')
+            exec ":silent! read !rspec --color --tty " . a:filename . " 2>&1"
+        end
+    end
+    setlocal nomodifiable
+endfunction
+
 function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
@@ -349,7 +396,7 @@ function! RunTestFile(...)
     elseif !exists("t:grb_test_file")
         return
     end
-    call RunTests(t:grb_test_file . command_suffix)
+    call DrewRunTests(t:grb_test_file . command_suffix)
 endfunction
 
 function! RunNearestTest()
@@ -359,6 +406,6 @@ endfunction
 
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+map <leader>a :call DrewRunTests('')<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
