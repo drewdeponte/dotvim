@@ -21,6 +21,17 @@ My personal `.vim` files. This repository includes my `~/.vimrc`, `~/.vim` dir, 
     git submodule init
     git submodule update
 
+## Color Scheme
+
+My `.vimrc` is setup to use the Solarized Color Scheme which can be found at
+[http://ethanschoonover.com/solarized](http://ethanschoonover.com/solarized).
+My `.vim` directory includes this color scheme as Git submodule just like all
+the plugins. The reason I mention this is because I have it configured to use
+the non 256 degraded Vim color version. This requires that you are using the
+Solarized Color Scheme for your terminal application as well. I for example am
+using [iTerm 2](http://www.iterm2.com/) with the Solarized iTerm 2 color scheme
+presets.
+
 ## Quick Guide
 
 ### Functionality Provided by my vimrc
