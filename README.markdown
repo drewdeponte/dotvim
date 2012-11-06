@@ -23,7 +23,7 @@ My personal `.vim` files. This repository includes my `~/.vimrc`, `~/.vim` dir, 
 
 ## Quick Guide
 
-The <leader> key in my `.vimrc` is set to the `,` key.
+The `<leader>` key in my `.vimrc` is set to the `,` key.
 
 ### Tab Completion
 
