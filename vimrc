@@ -18,6 +18,10 @@ set hidden
 " Number of : command entries to keep track of as history
 set history=10000
 
+" Set the word wrap character limit, this will force word wrap past the
+" specified column.
+set textwidth=78
+
 " Default to tab size of two spaces and enable auto indent
 set expandtab
 set tabstop=2
