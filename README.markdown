@@ -52,7 +52,6 @@ In insert mode when you start typing and hit tab it will bring up the tab comple
 
 #### Generic Fuzzy Matching
 
-* `<leader>t` - fuzzy match tags identified using ctags
 * `<leader>f` - fuzzy match all files under the project root directory 
 * `<leader>F` - fuzzy match all files under the directory parenting the file currently being editid
 * `<leader>b` - fuzzy match all files with buffers currently opened in the vim session
@@ -69,7 +68,6 @@ In insert mode when you start typing and hit tab it will bring up the tab comple
 * `<leader>gp` - fuzzy match files in the Ruby on Rails `public` path
 * `<leader>gs` - fuzzy match files in the Ruby on Rails `public/stylesheets/sass` path
 * `<leader>gf` - fuzzy match files in the Ruby on Rails `features` path
-* `<leader>gg` - open topleft split editing Gemfile
 * `<leader>gg` - open topleft split editing Gemfile
 
 ### Plugin Provided Functionality
