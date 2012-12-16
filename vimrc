@@ -403,7 +403,7 @@ function! RunTestFile(...)
     elseif !exists("t:grb_test_file")
         return
     end
-    call DrewRunTests(t:grb_test_file . command_suffix)
+    call RunTests(t:grb_test_file . command_suffix)
 endfunction
 
 function! RunNearestTest()
@@ -413,6 +413,6 @@ endfunction
 
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call DrewRunTests('')<cr>
+map <leader>a :call RunTests('')<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
