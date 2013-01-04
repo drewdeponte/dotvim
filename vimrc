@@ -1,3 +1,6 @@
+" set the clipboard to unnamed so it uses the system clipboard
+set clipboard=unnamed
+
 " enable pathogen to load all the vim bundles in ~/.vim/bundle/
 call pathogen#infect()
 
