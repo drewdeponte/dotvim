@@ -1,0 +1,77 @@
+syntax on
+set incsearch
+
+set expandtab
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>rc :source $MYVIMRC<cr>
+nnoremap <leader>! :Shell
+nnoremap <leader>h :set hlsearch! hlsearch?<CR>
+nnoremap <leader>hw *# :set hlsearch! hlsearch?<CR>
+nnoremap <C-N><C-N> :set invnumber<CR>
+filetype plugin indent on
+set pastetoggle=<F2>
+" Press F4 to toggle highlighting on/off, and show current value.
+:noremap <F4> :set hlsearch! hlsearch?<CR>
+
+command! -complete=file -nargs=+ Gdiff call s:runDiff(<q-args>)
+command! -complete=shellcmd -nargs=+ Git call s:RunShellCommand('git ' .<q-args>)
+command! Srchwr call s:RunShellCommand('find . -name \*.rb -exec grep -H --regexp="' .expand("<cword>").'" {} \;')
+command! Srchwg call s:RunShellCommand('find . -name \*.groovy -exec grep -H --regexp="' .expand("<cword>").'" {} \;')
+command! -nargs=+ Srchw call s:RunShellCommand('find . -name \*.' .<q-args>. ' -exec grep -H --regexp="' .expand("<cword>").'" {} \;')
+command! -nargs=+ Srchv call s:RunShellCommand('find . -name \*.' .<q-args>. ' -exec grep -H --regexp="' .s:GetVisualSelection().'" {} \;')
+command! -complete=shellcmd -nargs=+ SrchR call s:RunShellCommand('find . -name \*.rb -exec grep -H --regexp="' .<q-args>.'" {} \;')
+command! -complete=shellcmd -nargs=+ SrchG call s:RunShellCommand('find . -name \*.groovy -exec grep -H --regexp="' .<q-args>.'" {} \;')
+command! -complete=shellcmd -nargs=+ SrchJava call s:RunShellCommand('find . -name \*.java -exec grep -H --regexp="' .<q-args>.'" {} \;')
+command! -complete=shellcmd -nargs=+ SrchJs call s:RunShellCommand('find . -name \*.js -exec grep -H --regexp="' .<q-args>.'" {} \;')
+command! -complete=shellcmd -nargs=+ SrchGsp call s:RunShellCommand('find . -name \*.gsp -exec grep -H --regexp="' .<q-args>.'" {} \;')
+command! Cuke call s:RunShellCommand('bundle exec cucumber ' .expand('%:p'))
+command! CukeL call s:RunShellCommand('bundle exec cucumber ' .expand('%:p').':'.winline())
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+"adapted this function from here:
+"http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+function! s:RunShellCommand(cmdline)
+  echo a:cmdline
+  let expanded_cmdline = a:cmdline
+  for part in split(a:cmdline, ' ')
+     if part[0] =~ '\v[%#<]'
+        let expanded_part = fnameescape(expand(part))
+        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+     endif
+  endfor
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:    ' . a:cmdline)
+  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+  call setline(3,substitute(getline(2),'.','=','g'))
+  execute '$read !'. expanded_cmdline
+  setlocal nomodifiable
+  1
+endfunction
+
+"found this function here:
+"https://github.com/roma1n/vim-googurl/blob/master/googurl.vim
+function! s:GetVisualSelection()
+  try
+    let a_save = @a
+    normal! gv"ay
+    return @a
+  finally
+    let @a = a_save
+  endtry
+endfunction
+
+function! s:runDiff(arg)
+	echo a:arg
+	let filearg = a:arg
+	botright new
+	if filearg == 'a'
+		execute '! git diff >projdiff.diff'
+	else
+		execute '! git diff ' .filearg. ' >projdiff.diff'
+	endif
+	open projdiff.diff
+	setlocal nomodifiable 
+	set syntax
+	1
+endfunction
+

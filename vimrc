@@ -1,3 +1,6 @@
+" open to overrides from others
+source ~/.vimrc-ext
+
 " enable pathogen to load all the vim bundles in ~/.vim/bundle/
 call pathogen#infect()
 
