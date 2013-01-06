@@ -1,3 +1,6 @@
+" open to overrides from others
+source ~/.vimrc-ext
+
 " set the clipboard to unnamed so it uses the system clipboard
 set clipboard=unnamed
 
