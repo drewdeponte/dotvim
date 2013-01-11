@@ -370,9 +370,17 @@ function! DrewRunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     if match(a:filename, '\.feature') != -1
-        exec ":!script/features " . a:filename
+        if filereadable("zeus.json")
+          exec ":!zeus cucumber " . a:filename
+        elseif filereadable("script/features")
+          exec ":!script/features " . a:filename
+        else
+          exec ":!bundle exec cucumber " . a:filename
+        end
     else
-        if filereadable("script/test")
+        if filereadable("zeus.json")
+            exec ":!zeus test " . a:filename
+        elseif filereadable("script/test")
             exec ":!script/test " . a:filename
         elseif filereadable("Gemfile")
           " :cexpr system('bundle exec rspec --color '.a:filename.' 2>&1')
@@ -395,9 +403,17 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     if match(a:filename, '\.feature') != -1
-        exec ":!script/features " . a:filename
+        if filereadable("zeus.json")
+          exec ":!zeus cucumber " . a:filename
+        elseif filereadable("script/features")
+          exec ":!script/features " . a:filename
+        else
+          exec ":!bundle exec cucumber " . a:filename
+        end
     else
-        if filereadable("script/test")
+        if filereadable("zeus.json")
+            exec ":!zeus test " . a:filename
+        elseif filereadable("script/test")
             exec ":!script/test " . a:filename
         elseif filereadable("Gemfile")
             exec ":!bundle exec rspec --color " . a:filename
@@ -436,6 +452,6 @@ endfunction
 
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+map <leader>a :call RunTests('spec/')<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
