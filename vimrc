@@ -181,6 +181,13 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
+
+" Erb statement generators
+nmap <leader>- i<%<space><space>-%><esc>bhi
+nmap <leader>= i<%=<space><space>%><esc>bhi
+imap <leader>- <%<space><space>-%><esc>bhi
+imap <leader>= <%=<space><space>%><esc>bhi
+
 "imap <c-n> <%<space><space>%><esc>bhi
 "imap <c-r> <%=<space><space>%><esc>bhi
 " Can't be bothered to understand ESC vs <c-c> in insert mode
@@ -188,6 +195,7 @@ imap <c-c> <esc>
 " Clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
 nnoremap <leader><leader> <c-^>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS TO JUMP TO SPECIFIC CtrlP TARGETS AND FILES
