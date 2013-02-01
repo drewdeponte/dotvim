@@ -72,7 +72,7 @@ set winheight=29
 set winminheight=5
 
 " The shell to use when using :!
-set shell=bash
+set shell=zsh
 
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
