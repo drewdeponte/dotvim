@@ -98,6 +98,9 @@ set backspace=indent,eol,start
 " enable syntax
 syntax on
 
+" enable automatic code folder on indent
+set foldmethod=syntax
+
 " Set my leader key to be a comma
 let mapleader = ","
 
@@ -358,6 +361,38 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 "   endif
 " endfunction
 
+function! BufferedRunTests(filename)
+  enew
+  setlocal modifiable
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  nnoremap <buffer> <enter> :bd<CR>
+  exec ":silent! AnsiEsc"
+
+  if match(a:filename, '\.feature') != -1
+      if filereadable("zeus.json")
+        exec ":!zeus cucumber " . a:filename
+      elseif filereadable("script/features")
+        exec ":!script/features " . a:filename
+      else
+        exec ":!bundle exec cucumber " . a:filename
+      end
+  else
+      if filereadable("zeus.json")
+          exec ":silent read !zeus test --color --tty " . a:filename . " 2>&1"
+      elseif filereadable("script/test")
+          exec ":!script/test " . a:filename
+      elseif filereadable("Gemfile")
+        " :cexpr system('bundle exec rspec --color '.a:filename.' 2>&1')
+          exec ":silent! read !bundle exec rspec --color --tty " . a:filename . " 2>&1"
+      else
+        " :cexpr system('rspec --color '.a:filename.' 2>&1')
+          exec ":silent! read !rspec --color --tty " . a:filename . " 2>&1"
+      end
+  end
+  setlocal nomodifiable
+endfunction
+
+
 function! DrewRunTests(filename)
     " :w
     let winnr = bufwinnr('^_drew_run_tests_output$')
@@ -420,7 +455,7 @@ function! RunTests(filename)
         end
     else
         if filereadable("zeus.json")
-            exec ":!zeus test " . a:filename
+            exec ":!zeus test --no-color " . a:filename
         elseif filereadable("script/test")
             exec ":!script/test " . a:filename
         elseif filereadable("Gemfile")
@@ -452,7 +487,11 @@ function! RunNearestTest()
     call RunTestFile()
 endfunction
 
-map <leader>t :call RunTestFile()<cr>
+function! RunTestsInCurrentFile()
+    call RunTests(expand("%"))
+endfunction
+
+map <leader>t :call RunTestsInCurrentFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('spec/')<cr>
 map <leader>c :w\|:!script/features<cr>
