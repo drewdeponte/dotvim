@@ -101,6 +101,9 @@ syntax on
 " enable automatic code folder on indent
 set foldmethod=syntax
 
+" number of levels to auto fold when open a file
+set foldlevel=1
+
 " Set my leader key to be a comma
 let mapleader = ","
 
