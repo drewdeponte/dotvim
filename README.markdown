@@ -140,3 +140,21 @@ Provides full blown Git interface inside of Vim. This is very valuble in my
 opinion and is worth spending some time learning as it will make your life much
 easier.
 [http://github.com/tpope/vim-fugitive](http://github.com/tpope/vim-fugitive)
+
+## Extending and Overriding
+
+Inject your own changes into the existing vim functionality by adding extended
+versions of .vimrc and .gvimrc in your home directory. If you add files named
+`.vimrc-ext` and `.gvimrc-ext` to your homedirectory, they are sourced at the top
+of the vimrc and gvimrc files in this project. Any functions or settings you
+add to those files will be available in vim sessions. 
+
+This makes it easy for you to try out this project without losing your
+existing vim settings. Simply rename your existing .vimrc to .vimrc-ext and
+our .gvimrc to .gvimrc-ext and restart vim. If you don't already have your
+settings, we've included `*-ext-example` files in the project. If you want to
+try them out, either either move them into your homedirectory with the proper
+names or set symbolic links in your home direcory as follows:
+
+ln -s .vim/vimrc-ext-example .vimrc-ext
+ln -s .gvim/gvimrc-ext-example .gvimrc-ext

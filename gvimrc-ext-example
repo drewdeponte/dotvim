@@ -1,0 +1,33 @@
+let g:CommandTTagIncludeFilenames=1
+
+if has("gui_macvim")
+	macmenu &File.Close\ Window key=<nop>
+	macmenu &File.Close key=<nop>
+	nnoremap <D-w>h <C-W>h
+	inoremap <D-w>h <C-W>h
+	nnoremap <D-w>l <C-W>l
+	inoremap <D-w>l <C-W>l
+	nnoremap <D-w>j <C-W>j
+	inoremap <D-w>j <C-W>j
+	nnoremap <D-w>k <C-W>k
+	inoremap <D-w>k <C-W>k 
+
+  "remap command-T to open a new tab
+	macmenu &File.Open\ Tab\.\.\. key=<nop>
+	nnoremap <D-T> :tabnew<CR>
+	inoremap <D-T> :tabnew<CR>
+  "remap command-t to run command-t plugin
+	macmenu &File.New\ Tab key=<nop>
+	nnoremap <D-t> :CommandT<CR>
+	inoremap <D-t> :CommandT<CR>
+  "remap command-f to run CommandTFlush (needed after new files are added)
+	macmenu &Edit.Find.Find\.\.\. key=<nop>
+	nnoremap <D-f> :CommandTFlush<CR>
+	inoremap <D-f> :CommandTFlush<CR>
+
+	
+	"macmenu &File.New\ Tab key=<D-T>
+	
+
+endif
+
