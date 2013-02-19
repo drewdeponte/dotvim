@@ -101,6 +101,9 @@ syntax on
 " enable automatic code folder on indent
 set foldmethod=syntax
 
+" do NOT fold by default
+set nofoldenable
+
 " number of levels to auto fold when open a file
 set foldlevel=1
 
