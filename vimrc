@@ -1,5 +1,5 @@
 " set the clipboard to unnamed so it uses the system clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " enable pathogen to load all the vim bundles in ~/.vim/bundle/
 call pathogen#infect()
@@ -356,17 +356,14 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" function! DrewJumpToFile()
-"   let cur_line = getline(".")
-"   " :echo cur_line
-"   let match_line = matchstr(cur_line, "\v\s*Foo\w*")
-"   if empty(match_line)
-"     :echo "it did NOT matched "
-"   else
-"     :echo "it matched " . match_line
-"   endif
-" endfunction
 
+" Test Runner that I started messing arround with for use in MacVim so that I
+" could have the tests run and use the AnsiEsc plugin to interpret the ansi
+" color codes output by the test commands. This is only necessary because
+" MacVim does not run in a terminal their for the terminal isn't there to
+" interpret the ansi color codes. Also note this oppens a new scratch buffer
+" to put the test output into. It does this because I couldn't figure out how
+" to tie AnsiEsc into the :! execution path.
 function! BufferedRunTests(filename)
   enew
   setlocal modifiable
@@ -398,8 +395,14 @@ function! BufferedRunTests(filename)
   setlocal nomodifiable
 endfunction
 
-
-function! DrewRunTests(filename)
+" This is another variation of test runner that I was playing around with
+" just to see if I would like this type of dev/test workflow. When the tests
+" are run it opens the scratch buffer in a pane and outputs the test run
+" there. Then if tests are run again it simply updates that buffer. The
+" concept behind this workflow was simply that there was a persistent pane up
+" with the test output all the time, unless you explicitly closed it of
+" course. This was intended to be used in the terminal, not in MacVim.
+function! PersistetBufferRunTests(filename)
     " :w
     let winnr = bufwinnr('^_drew_run_tests_output$')
     if ( winnr >= 0 )
@@ -442,63 +445,91 @@ function! DrewRunTests(filename)
     setlocal nomodifiable
 endfunction
 
+function! RunCucumberTest(filename)
+  if filereadable("zeus.json")
+    exec ":!zeus cucumber " . a:filename
+  elseif filereadable("script/features")
+    exec ":!script/features " . a:filename
+  else
+    exec ":!bundle exec cucumber " . a:filename
+  end
+endfunction
+
+function! RunRSpecTest(filename)
+  if filereadable("zeus.json")
+    exec ":!zeus test --color " . a:filename
+  elseif filereadable("script/test")
+    exec ":!script/test " . a:filename
+  elseif filereadable("Gemfile")
+    exec ":!bundle exec rspec --color " . a:filename
+  else
+    exec ":!rspec --color " . a:filename
+  end
+endfunction
+
 function! RunTests(filename)
-    " Write the file and run tests for the given filename
-    :w
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature') != -1
-        if filereadable("zeus.json")
-          exec ":!zeus cucumber " . a:filename
-        elseif filereadable("script/features")
-          exec ":!script/features " . a:filename
-        else
-          exec ":!bundle exec cucumber " . a:filename
-        end
-    else
-        if filereadable("zeus.json")
-            exec ":!zeus test --no-color " . a:filename
-        elseif filereadable("script/test")
-            exec ":!script/test " . a:filename
-        elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color " . a:filename
-        else
-            exec ":!rspec --color " . a:filename
-        end
-    end
+  :w
+  if match(a:filename, '\.feature') != -1
+    call RunCucumberTest(a:filename)
+  else
+    call RunRSpecTest(a:filename)
+  end
 endfunction
 
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-    let t:grb_test_line=line('.')
+function! StoreCurrentFileAsTestFile()
+  let t:grb_test_file=@%
 endfunction
 
-function! RunTestFile(...)
-    " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
-    if in_test_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . ":" . t:grb_test_line)
+function! StoreCurrentLineNumAsTestLineNum()
+  let t:grb_test_line=line('.')
+endfunction
+
+function! RemoveTestLineNum()
+  if exists("t:grb_test_line")
+    unlet t:grb_test_line
+  end
 endfunction
 
 function! RunNearestTest()
-    call RunTestFile()
+  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+  if in_test_file
+    call StoreCurrentFileAsTestFile()
+    call StoreCurrentLineNumAsTestLineNum()
+  elseif !exists("t:grb_test_file") || !exists("t:grb_test_line")
+    return
+  end
+  call RunTests(t:grb_test_file . ":" . t:grb_test_line)
 endfunction
 
 function! RunTestsInCurrentFile()
-    call RunTests(expand("%"))
+  call RunTests(expand("%"))
 endfunction
 
-map <leader>t :call RunTestsInCurrentFile()<cr>
+function! RunAllTestsInCurrentTestFile()
+  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+  if in_test_file
+    call StoreCurrentFileAsTestFile()
+    call RemoveTestLineNum()
+  elseif !exists("t:grb_test_file")
+    return
+  end
+  call RunTests(t:grb_test_file)
+endfunction
+
+function! RunAllRSpecTests()
+  call RunTests('spec/')
+endfunction
+
+function! RunAllCucumberFeatures()
+  call RunCucumberTest("")
+endfunction
+
+function! RunWipCucumberFeatures()
+  call RunCucumberTest("--profile wip")
+endfunction
+
+map <leader>t :call RunAllTestsInCurrentTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('spec/')<cr>
-map <leader>c :w\|:!script/features<cr>
-map <leader>w :w\|:!script/features --profile wip<cr>
+map <leader>a :call RunAllRSpecTests()<cr>
+map <leader>c :call RunAllCucumberFeatures()<cr>
+map <leader>w :call RunWipCucumberFeatures()<cr>
