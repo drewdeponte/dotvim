@@ -66,10 +66,10 @@ set numberwidth=5
 set showtabline=2
 
 " Soft min width for the active window
-set winwidth=79
+set winwidth=15
 
 " Soft min height for the active window
-set winheight=29
+set winheight=5
 
 " Min height for non active window
 set winminheight=5
