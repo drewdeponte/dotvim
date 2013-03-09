@@ -1,11 +1,11 @@
+" enable pathogen to load all the vim bundles in ~/.vim/bundle/
+call pathogen#infect()
+
 " set the clipboard to unnamed so it uses the system clipboard
 " set clipboard=unnamed
 
 " Set the visual bell instead of audible
 set vb
-
-" enable pathogen to load all the vim bundles in ~/.vim/bundle/
-call pathogen#infect()
 
 " Set the font when using MacVim.app, this is ignored for console vim as it
 " simply uses the console font.
