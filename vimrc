@@ -169,6 +169,21 @@ augroup vimrcEx
 
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
+
+  " Don't screw up folds when inserting text that might affect them, until
+  " " leaving insert mode. Foldmethod is local to the window. Protect against
+  " " screwing up folding when switching between windows.
+  " 
+  " Note: I added the following because I was seeing very bad performance when
+  " using Ctrl+n or Ctrl+p or Ctrl+x Ctrl+o to do wordcompletion. I did
+  " googling and found out it was due to the foldmethod=syntax and that there
+  " is a work around to set foldmethod=manual while in insert mode and then
+  " back to the configured value when exiting insert mode. This resolves the
+  " performance issues I was having and code folding still works properly,
+  " WIN!
+  " http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
+  autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+  autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
