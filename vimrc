@@ -475,7 +475,9 @@ function! PersistetBufferRunTests(filename)
 endfunction
 
 function! RunCucumberTest(filename)
-  if filereadable("zeus.json")
+  if executable("spring")
+    exec ":!spring cucumber " . a:filename
+  elseif filereadable("zeus.json")
     exec ":!zeus cucumber " . a:filename
   elseif filereadable("script/features")
     exec ":!script/features " . a:filename
@@ -485,7 +487,9 @@ function! RunCucumberTest(filename)
 endfunction
 
 function! RunRSpecTest(filename)
-  if filereadable("zeus.json")
+  if executable("spring")
+    exec ":!spring rspec --color " . a:filename
+  elseif filereadable("zeus.json")
     exec ":!zeus test --color " . a:filename
   elseif filereadable("script/test")
     exec ":!script/test " . a:filename
