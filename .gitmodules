@@ -46,3 +46,6 @@
 [submodule "bundle/vim-ruby-refactoring"]
 	path = bundle/vim-ruby-refactoring
 	url = git://github.com/ecomba/vim-ruby-refactoring.git
+[submodule "bundle/vim-test-recall"]
+	path = bundle/vim-test-recall
+	url = git@github.com:cyphactor/vim-test-recall.git
