@@ -328,7 +328,7 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " Alternate between test files and paired code files
-nnoremap <leader>. :call OpenTestAlternate()<cr>
+nnoremap <leader>. :OpenAlternate<cr>
 
 " Map all the run test calls provided by vim-test-recall
 map <leader>t :call RunAllTestsInCurrentTestFile()<cr>
