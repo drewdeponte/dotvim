@@ -52,3 +52,6 @@
 [submodule "bundle/vim-open-alternate"]
 	path = bundle/vim-open-alternate
 	url = git@github.com:cyphactor/vim-open-alternate.git
+[submodule "bundle/vim-ping-cursor"]
+	path = bundle/vim-ping-cursor
+	url = git@github.com:cyphactor/vim-ping-cursor.git
