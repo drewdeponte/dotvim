@@ -266,7 +266,7 @@ map <leader>gs :CtrlP public/stylesheets/sass<cr>
 map <leader>gf :CtrlP features<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>gt :CtrlPTag<cr>
-map <leader>f :CtrlP<cr>
+map <leader>f :CtrlP .<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
 
