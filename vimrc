@@ -129,7 +129,10 @@ let mapleader = ","
 filetype plugin indent on
 
 " tab completion mode for files, etc.
-set wildmode=longest,list
+set wildmode=list:longest,list:full
+
+" scan current buffer, buffers of other windows, loaded buffers in buffer list, tags
+set complete=.,w,b
 
 " make tab completion for files/buffers act like bash
 set wildmenu
