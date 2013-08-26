@@ -141,6 +141,9 @@ set completeopt=menu,preview
 " make tab completion for files/buffers act like bash
 set wildmenu
 
+" set ack.vim to use ag instead of ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
