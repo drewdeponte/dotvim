@@ -131,8 +131,12 @@ filetype plugin indent on
 " tab completion mode for files, etc.
 set wildmode=list:longest,list:full
 
-" scan current buffer, buffers of other windows, loaded buffers in buffer list, tags
-set complete=.,w,b
+" scan current buffer, buffers of other windows, loaded buffers in buffer
+" list, unloaded buffers, tags
+set complete=.,w,b,u,t
+
+" enable menu and extra info about completion
+set completeopt=menu,preview
 
 " make tab completion for files/buffers act like bash
 set wildmenu

@@ -55,3 +55,6 @@
 [submodule "bundle/vim-ping-cursor"]
 	path = bundle/vim-ping-cursor
 	url = git://github.com:cyphactor/vim-ping-cursor.git
+[submodule "bundle/colorschemes"]
+	path = bundle/colorschemes
+	url = git@github.com:flazz/vim-colorschemes.git
