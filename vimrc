@@ -250,6 +250,9 @@ imap <c-c> <esc>
 :nnoremap <CR> :nohlsearch<cr>
 nnoremap <leader><leader> <c-^>
 
+" make pasting correctly from system clip board easier.
+map <leader>p :set paste<CR>o<esc>"*`]p:set nopaste<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS TO JUMP TO SPECIFIC CtrlP TARGETS AND FILES
@@ -354,4 +357,4 @@ map <leader>c :call RunAllCucumberFeatures()<cr>
 map <leader>w :call RunWipCucumberFeatures()<cr>
 
 " Ping the cursor like an old radar to find it fast
-nnoremap <leader>p :PingCursor<cr>
+nnoremap <leader>C :PingCursor<cr>
