@@ -214,7 +214,8 @@ augroup END
 " colorscheme ir_black
 
 set background=dark
-colorscheme jellybeans
+" colorscheme jellybeans
+colorscheme xoria256
 
 " set background=dark
 " colorscheme herald
