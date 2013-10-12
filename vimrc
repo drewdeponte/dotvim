@@ -259,6 +259,32 @@ map <leader>P :set paste<CR>^"+P:set nopaste<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS TO JUMP TO SPECIFIC CtrlP TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! SelectaCommand(choice_command, vim_command)
+  try
+    silent! exec a:vim_command . " " . system(a:choice_command . " | selecta")
+  catch /Vim:Interrupt/
+    " Swallow the ^C so that the redraw below happens; otherwise there will be
+    " leftovers from selecta on the screen
+  endtry
+  redraw!
+endfunction
+
+" Find all tags in the tags database, then open the tag that the user selects
+command! SelectaTag :call SelectaCommand("awk '{print $1}' tags | sort -u | grep -v '^!'", ":tag")
+
+fu! GetBuffers()
+	let ids = filter(range(1, bufnr('$')), 'empty(getbufvar(v:val, "&bt"))'
+		\ .' && getbufvar(v:val, "&bl")')
+  let bufs = [[], []]
+  for id in ids
+    let bname = bufname(id)
+    let ebname = bname == ''
+    let fname = fnamemodify(ebname ? '['.id.'*No Name]' : bname, ':.')
+    cal add(bufs[ebname], fname)
+  endfo
+  retu join(bufs[0] + bufs[1], "\n")
+endf
+
 map <leader>gr :topleft :split config/routes.rb<cr>
 function! ShowRoutes()
   " Requires 'scratch' plugin
@@ -277,19 +303,32 @@ function! ShowRoutes()
   :normal dd
 endfunction
 map <leader>gR :call ShowRoutes()<cr>
-map <leader>gv :CtrlP app/views<cr>
-map <leader>gc :CtrlP app/controllers<cr>
-map <leader>gm :CtrlP app/models<cr>
-map <leader>gh :CtrlP app/helpers<cr>
-map <leader>gl :CtrlP lib<cr>
-map <leader>gp :CtrlP public<cr>
-map <leader>gs :CtrlP public/stylesheets/sass<cr>
-map <leader>gf :CtrlP features<cr>
+" map <leader>gv :CtrlP app/views<cr>
+" map <leader>gc :CtrlP app/controllers<cr>
+" map <leader>gm :CtrlP app/models<cr>
+" map <leader>gh :CtrlP app/helpers<cr>
+" map <leader>gl :CtrlP lib<cr>
+" map <leader>gp :CtrlP public<cr>
+" map <leader>gs :CtrlP public/stylesheets/sass<cr>
+" map <leader>gf :CtrlP features<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>gt :CtrlPTag<cr>
-map <leader>f :CtrlP .<cr>
-map <leader>F :CtrlP %%<cr>
-map <leader>b :CtrlPBuffer<cr>
+" map <leader>gt :CtrlPTag<cr>
+" map <leader>f :CtrlP .<cr>
+" map <leader>F :CtrlP %%<cr>
+" map <leader>b :CtrlPBuffer<cr>
+
+map <leader>b :call SelectaCommand("echo '" . GetBuffers() . "'", ":buffer")<cr>
+map <leader>gv :call SelectaCommand("find app/views -type f", ":e")<cr>
+map <leader>gc :call SelectaCommand("find app/controllers -type f", ":e")<cr>
+map <leader>gm :call SelectaCommand("find app/models -type f", ":e")<cr>
+map <leader>gh :call SelectaCommand("find app/helpers -type f", ":e")<cr>
+map <leader>gl :call SelectaCommand("find lib -type f", ":e")<cr>
+map <leader>gp :call SelectaCommand("find public -type f", ":e")<cr>
+map <leader>gs :call SelectaCommand("find app/assets/stylesheets -type f", ":e")<cr>
+map <leader>gf :call SelectaCommand("find features -type f", ":e")<cr>
+" fuzzy-match files except for stuff in tmp/*, log/*, or puppet/*
+map <leader>f :call SelectaCommand("find * -path tmp -prune -or -path log -prune -or -path puppet -prune -or -type f", ":e")<cr>
+map <leader>gt :SelectaTag<cr>
 
 " jump to buffer if already open, even if in another tab
 let g:ctrlp_switch_buffer = 2
