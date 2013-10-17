@@ -19,9 +19,6 @@
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = git://github.com/vim-scripts/matchit.zip.git
-[submodule "bundle/vim-ctrlp"]
-	path = bundle/vim-ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
 [submodule "bundle/gist-vim"]
 	path = bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
@@ -34,9 +31,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "bundle/AnsiEsc.vim"]
 	path = bundle/AnsiEsc.vim
 	url = git://github.com/vim-scripts/AnsiEsc.vim.git
