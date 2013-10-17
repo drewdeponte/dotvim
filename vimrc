@@ -257,7 +257,7 @@ map <leader>P :set paste<CR>^"+P:set nopaste<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MAPS TO JUMP TO SPECIFIC CtrlP TARGETS AND FILES
+" MAPS TO JUMP TO SPECIFIC TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! SelectaCommand(choice_command, vim_command)
   try
@@ -303,19 +303,7 @@ function! ShowRoutes()
   :normal dd
 endfunction
 map <leader>gR :call ShowRoutes()<cr>
-" map <leader>gv :CtrlP app/views<cr>
-" map <leader>gc :CtrlP app/controllers<cr>
-" map <leader>gm :CtrlP app/models<cr>
-" map <leader>gh :CtrlP app/helpers<cr>
-" map <leader>gl :CtrlP lib<cr>
-" map <leader>gp :CtrlP public<cr>
-" map <leader>gs :CtrlP public/stylesheets/sass<cr>
-" map <leader>gf :CtrlP features<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-" map <leader>gt :CtrlPTag<cr>
-" map <leader>f :CtrlP .<cr>
-" map <leader>F :CtrlP %%<cr>
-" map <leader>b :CtrlPBuffer<cr>
 
 map <leader>b :call SelectaCommand("echo '" . GetBuffers() . "'", ":buffer")<cr>
 map <leader>gv :call SelectaCommand("find app/views -type f", ":e")<cr>
@@ -327,7 +315,7 @@ map <leader>gp :call SelectaCommand("find public -type f", ":e")<cr>
 map <leader>gs :call SelectaCommand("find app/assets/stylesheets -type f", ":e")<cr>
 map <leader>gf :call SelectaCommand("find features -type f", ":e")<cr>
 " fuzzy-match files except for stuff in tmp/*, log/*, or puppet/*
-map <leader>f :call SelectaCommand("find * -path tmp -prune -or -path log -prune -or -path puppet -prune -or -type f", ":e")<cr>
+map <leader>f :call SelectaCommand("find * -path tmp -prune -or -path log -prune -or -type f", ":e")<cr>
 map <leader>gt :SelectaTag<cr>
 
 " jump to buffer if already open, even if in another tab
