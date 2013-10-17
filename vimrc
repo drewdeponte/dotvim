@@ -198,6 +198,7 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " set background=light
 " colorscheme scott
 
@@ -214,11 +215,15 @@ augroup END
 " colorscheme ir_black
 
 set background=dark
-" colorscheme jellybeans
-colorscheme xoria256
+colorscheme drew_jellybeans
+
+" colorscheme xoria256
 
 " set background=dark
 " colorscheme herald
+
+" set background=dark
+" colorscheme grb256
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
