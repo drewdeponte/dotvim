@@ -319,8 +319,8 @@ map <leader>gl :call SelectaCommand("find lib -type f", ":e")<cr>
 map <leader>gp :call SelectaCommand("find public -type f", ":e")<cr>
 map <leader>gs :call SelectaCommand("find app/assets/stylesheets -type f", ":e")<cr>
 map <leader>gf :call SelectaCommand("find features -type f", ":e")<cr>
-" fuzzy-match files except for stuff in tmp/*, log/*, or puppet/*
-map <leader>f :call SelectaCommand("find * -path tmp -prune -or -path log -prune -or -type f", ":e")<cr>
+" fuzzy-match files except for stuff in tmp/*, log/*, tags
+map <leader>f :call SelectaCommand("find * -path tags -prune -or -path tmp -prune -or -path log -prune -or -path " . expand('%') . " -prune -or -type f -print", ":e")<cr>
 map <leader>gt :SelectaTag<cr>
 
 " jump to buffer if already open, even if in another tab
