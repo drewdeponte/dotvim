@@ -288,7 +288,9 @@ fu! GetBuffers()
     let bname = bufname(id)
     let ebname = bname == ''
     let fname = fnamemodify(ebname ? '['.id.'*No Name]' : bname, ':.')
-    cal add(bufs[ebname], fname)
+    if bname != expand('%')
+      cal add(bufs[ebname], fname)
+    endif
   endfo
   retu join(bufs[0] + bufs[1], "\n")
 endf
