@@ -264,18 +264,21 @@ map <leader>P :set paste<CR>^"+P:set nopaste<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS TO JUMP TO SPECIFIC TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! SelectaCommand(choice_command, vim_command)
+function! SelectaCommand(choice_command, selecta_args, vim_command)
   try
-    silent! exec a:vim_command . " " . system(a:choice_command . " | selecta")
+    silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
   catch /Vim:Interrupt/
     " Swallow the ^C so that the redraw below happens; otherwise there will be
     " leftovers from selecta on the screen
+    redraw!
+    return
   endtry
   redraw!
+  exec a:vim_command . " " . selection
 endfunction
 
 " Find all tags in the tags database, then open the tag that the user selects
-command! SelectaTag :call SelectaCommand("awk '{print $1}' tags | sort -u | grep -v '^!'", ":tag")
+command! SelectaTag :call SelectaCommand("awk '{print $1}' tags | sort -u | grep -v '^!'", "", ":tag")
 
 fu! GetBuffers()
 	let ids = filter(range(1, bufnr('$')), 'empty(getbufvar(v:val, "&bt"))'
@@ -310,17 +313,17 @@ endfunction
 map <leader>gR :call ShowRoutes()<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
-map <leader>b :call SelectaCommand("echo '" . GetBuffers() . "'", ":buffer")<cr>
-map <leader>gv :call SelectaCommand("find app/views -type f", ":e")<cr>
-map <leader>gc :call SelectaCommand("find app/controllers -type f", ":e")<cr>
-map <leader>gm :call SelectaCommand("find app/models -type f", ":e")<cr>
-map <leader>gh :call SelectaCommand("find app/helpers -type f", ":e")<cr>
-map <leader>gl :call SelectaCommand("find lib -type f", ":e")<cr>
-map <leader>gp :call SelectaCommand("find public -type f", ":e")<cr>
-map <leader>gs :call SelectaCommand("find app/assets/stylesheets -type f", ":e")<cr>
-map <leader>gf :call SelectaCommand("find features -type f", ":e")<cr>
+map <leader>b :call SelectaCommand("echo '" . GetBuffers() . "'", "", ":buffer")<cr>
+map <leader>gv :call SelectaCommand("find app/views -type f", "", ":e")<cr>
+map <leader>gc :call SelectaCommand("find app/controllers -type f", "", ":e")<cr>
+map <leader>gm :call SelectaCommand("find app/models -type f", "", ":e")<cr>
+map <leader>gh :call SelectaCommand("find app/helpers -type f", "", ":e")<cr>
+map <leader>gl :call SelectaCommand("find lib -type f", "", ":e")<cr>
+map <leader>gp :call SelectaCommand("find public -type f", "", ":e")<cr>
+map <leader>gs :call SelectaCommand("find app/assets/stylesheets -type f", "", ":e")<cr>
+map <leader>gf :call SelectaCommand("find features -type f", "", ":e")<cr>
 " fuzzy-match files except for stuff in tmp/*, log/*, tags
-map <leader>f :call SelectaCommand("find * -path tags -prune -or -path tmp -prune -or -path log -prune -or -path " . expand('%') . " -prune -or -type f -print", ":e")<cr>
+map <leader>f :call SelectaCommand("find * -path tags -prune -or -path tmp -prune -or -path log -prune -or -path " . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
 map <leader>gt :SelectaTag<cr>
 
 " jump to buffer if already open, even if in another tab
