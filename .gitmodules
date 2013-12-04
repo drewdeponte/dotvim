@@ -64,3 +64,21 @@
 [submodule "bundle/vim-textobj-rubyblock"]
 	path = bundle/vim-textobj-rubyblock
 	url = git@github.com:nelstrom/vim-textobj-rubyblock.git
+[submodule "bundle/vim-snipmate"]
+	path = bundle/vim-snipmate
+	url = git@github.com:garbas/vim-snipmate.git
+[submodule "bundle/vim-addon-mw-utils"]
+	path = bundle/vim-addon-mw-utils
+	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/vim-tlib"]
+	path = bundle/vim-tlib
+	url = git@github.com:tomtom/tlib_vim.git
+[submodule "bundle/vim-endwise"]
+	path = bundle/vim-endwise
+	url = git@github.com:tpope/vim-endwise.git
+[submodule "bundle/vim-auto-pairs"]
+	path = bundle/vim-auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "bundle/vim-supertab"]
+	path = bundle/vim-supertab
+	url = git@github.com:ervandew/supertab.git
