@@ -53,7 +53,7 @@ In insert mode when you start typing and hit tab it will bring up the tab comple
 #### Generic Fuzzy Matching
 
 * `<leader>f` - fuzzy match all files under the project root directory 
-* `<leader>F` - fuzzy match all files under the directory parenting the file currently being editid
+* `<leader>F` - fuzzy match all files under the directory parenting the file currently being edited
 * `<leader>b` - fuzzy match all files with buffers currently opened in the vim session
 
 #### Ruby & Rails Fuzzy Matching/Quick Editing
@@ -83,7 +83,7 @@ Provides functionality to easily manage surroundings parens, quotes, etc.
 
 * `cst'` - change surrounding html tag to single quotes 
 * `cs'<p>` - change surrounding single quotes to `<p>` html tag
-* `cs'"` - change surronuding single quotes to double quotes
+* `cs'"` - change surrounding single quotes to double quotes
 * `ds"` - delete surrounding double quotes
 * `ysiw'` - add surrounding of single quote inside word (iw) where iw is a text object
 
@@ -136,7 +136,7 @@ Provides syntax highlighting for Cucumber features and step definitions
 
 #### vim-fugitive
 
-Provides full blown Git interface inside of Vim. This is very valuble in my
+Provides full blown Git interface inside of Vim. This is very valuable in my
 opinion and is worth spending some time learning as it will make your life much
 easier.
 [http://github.com/tpope/vim-fugitive](http://github.com/tpope/vim-fugitive)
@@ -145,7 +145,7 @@ easier.
 
 Inject your own changes into the existing vim functionality by adding extended
 versions of .vimrc and .gvimrc in your home directory. If you add files named
-`.vimrc-ext` and `.gvimrc-ext` to your homedirectory, they are sourced at the top
+`.vimrc-ext` and `.gvimrc-ext` to your home directory, they are sourced at the top
 of the vimrc and gvimrc files in this project. Any functions or settings you
 add to those files will be available in vim sessions. 
 
@@ -153,8 +153,8 @@ This makes it easy for you to try out this project without losing your
 existing vim settings. Simply rename your existing .vimrc to .vimrc-ext and
 our .gvimrc to .gvimrc-ext and restart vim. If you don't already have your
 settings, we've included `*-ext-example` files in the project. If you want to
-try them out, either either move them into your homedirectory with the proper
-names or set symbolic links in your home direcory as follows:
+try them out, either either move them into your home directory with the proper
+names or set symbolic links in your home directory as follows:
 
 ln -s .vim/vimrc-ext-example .vimrc-ext
 ln -s .gvim/gvimrc-ext-example .gvimrc-ext
