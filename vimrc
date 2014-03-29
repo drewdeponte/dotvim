@@ -22,6 +22,7 @@ set gfn=Monaco:h15
 set nocompatible
 
 " show line numbers
+set relativenumber
 set number
 set ruler
 
