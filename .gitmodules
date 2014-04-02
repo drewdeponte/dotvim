@@ -76,9 +76,6 @@
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = git@github.com:tpope/vim-endwise.git
-[submodule "bundle/vim-auto-pairs"]
-	path = bundle/vim-auto-pairs
-	url = git@github.com:jiangmiao/auto-pairs.git
 [submodule "bundle/vim-supertab"]
 	path = bundle/vim-supertab
 	url = git@github.com:ervandew/supertab.git
