@@ -319,12 +319,12 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 
 map <leader>b :call SelectaCommand("echo '" . GetBuffers() . "'", "", ":buffer")<cr>
 map <leader>gv :call SelectaCommand("find app/views -type f", "", ":e")<cr>
-map <leader>gc :call SelectaCommand("find app/controllers -type f", "", ":e")<cr>
+" map <leader>gc :call SelectaCommand("find app/controllers -type f", "", ":e")<cr>
 map <leader>gm :call SelectaCommand("find app/models -type f", "", ":e")<cr>
 map <leader>gh :call SelectaCommand("find app/helpers -type f", "", ":e")<cr>
 map <leader>gl :call SelectaCommand("find lib -type f", "", ":e")<cr>
-map <leader>gp :call SelectaCommand("find public -type f", "", ":e")<cr>
-map <leader>gs :call SelectaCommand("find app/assets/stylesheets -type f", "", ":e")<cr>
+" map <leader>gp :call SelectaCommand("find public -type f", "", ":e")<cr>
+" map <leader>gs :call SelectaCommand("find app/assets/stylesheets -type f", "", ":e")<cr>
 map <leader>gf :call SelectaCommand("find features -type f", "", ":e")<cr>
 " fuzzy-match files except for stuff in tmp/*, log/*, tags
 map <leader>f :call SelectaCommand("find * -path tags -prune -or -path tmp -prune -or -path log -prune -or -path " . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
@@ -342,6 +342,13 @@ let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_max_height = 20
 " tell ctrlp to ignore some files
 let g:ctrlp_custom_ignore = 'tags$\|\.DS_Store$\|\.git$\|_site$'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GIT SHORTCUTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>gs :Gstatus<cr>
+map <leader>gc :Gcommit<cr>
+map <leader>gp :!git push<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
