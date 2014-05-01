@@ -180,7 +180,9 @@ augroup vimrcEx
   " autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
 
   " Don't syntax highlight markdown because it's often wrong
-  autocmd! FileType mkd setlocal syn=off
+  " autocmd! FileType mkd setlocal syn=off
+  autocmd! FileType mkd setlocal spell
+  autocmd! FileType gitcommit setlocal spell
 
   " Don't screw up folds when inserting text that might affect them, until
   " " leaving insert mode. Foldmethod is local to the window. Protect against
