@@ -26,6 +26,12 @@ set relativenumber
 set number
 set ruler
 
+" set regexp engine to old one full featured one. Turns out that the newer NFA
+" regexp engine does NOT play nice with Ruby lang syntax highlighting.
+" Switching to the older non NFA regexp engine drastically increases
+" performance.
+set regexpengine=1
+
 " keep buffers opened in background until :q or :q!
 set hidden
 
