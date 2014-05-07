@@ -41,7 +41,10 @@ set history=10000
 " Set the word wrap character limit, this will force word wrap past the
 " specified column.
 set textwidth=78
-set colorcolumn=79
+
+" Set the visual color column. This is usually used to indicate the text wrap
+" boundaries.
+" set colorcolumn=79
 
 " Default to tab size of two spaces and enable auto indent
 set expandtab
