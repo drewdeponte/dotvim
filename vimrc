@@ -30,7 +30,7 @@ set ruler
 " regexp engine does NOT play nice with Ruby lang syntax highlighting.
 " Switching to the older non NFA regexp engine drastically increases
 " performance.
-if version >= 704
+if exists('+regexpengine')
   set regexpengine=1
 endif
 
