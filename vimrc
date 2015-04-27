@@ -263,12 +263,6 @@ nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
 
-" Erb statement generators
-nmap <leader>- i<%<space><space>-%><esc>bhi
-nmap <leader>= i<%=<space><space>%><esc>bhi
-imap <leader>- <%<space><space>-%><esc>bhi
-imap <leader>= <%=<space><space>%><esc>bhi
-
 "imap <c-n> <%<space><space>%><esc>bhi
 "imap <c-r> <%=<space><space>%><esc>bhi
 " Can't be bothered to understand ESC vs <c-c> in insert mode
