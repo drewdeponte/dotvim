@@ -160,6 +160,10 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
 augroup vimrcEx
   " Clear all autocmds in the group
   autocmd!
