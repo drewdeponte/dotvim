@@ -76,7 +76,7 @@ set ignorecase smartcase
 " set cursorcolumn
 
 " Make the command entry area consume two rows
-set cmdheight=2
+set cmdheight=1
 
 " Set preference for switching butters, :help switchbuf for details
 set switchbuf=useopen
