@@ -155,7 +155,7 @@ set completeopt=menu,preview
 set wildmenu
 
 " set ack.vim to use ag instead of ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --nogroup --nocolor --column --vimgrep'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
