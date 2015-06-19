@@ -334,32 +334,16 @@ endfunction
 map <leader>gR :call ShowRoutes()<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
-map <leader>b :CtrlPBuffer<cr>
-map <leader>gv :CtrlP app/views<cr>
-" map <leader>gc :call SelectaCommand("find app/controllers -type f", "", ":e")<cr>
-map <leader>gm :CtrlP app/models<cr>
-map <leader>gh :CtrlP app/helpers<cr>
-map <leader>gl :CtrlP lib<cr>
-" map <leader>gp :call SelectaCommand("find public -type f", "", ":e")<cr>
-" map <leader>gs :call SelectaCommand("find app/assets/stylesheets -type f", "", ":e")<cr>
-map <leader>gf :CtrlP features<cr>
+map <leader>b :call SelectaCommand("echo '" . GetBuffers() . "'", "", ":buffer")<cr>
+map <leader>gv :call SelectaCommand("find app/views -type f", "", ":e")<cr>
+map <leader>gm :call SelectaCommand("find app/models -type f", "", ":e")<cr>
+map <leader>gh :call SelectaCommand("find app/helpers -type f", "", ":e")<cr>
+map <leader>gl :call SelectaCommand("find lib -type f", "", ":e")<cr>
+map <leader>gf :call SelectaCommand("find features -type f", "", ":e")<cr>
 
 " fuzzy-match files except for stuff in tmp/*, log/*, tags
-map <leader>f :CtrlP<cr>
+map <leader>f :call SelectaCommand("find . -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
 map <leader>gt :SelectaTag<cr>
-
-" jump to buffer if already open, even if in another tab
-let g:ctrlp_switch_buffer = 2
-" set the local working directory to the nearest .git/ .hg/ .svn/ .bzr/
-let g:ctrlp_working_path_mode = 2
-" enable cross-session caching by not deleting cache files on exit
-let g:ctrlp_clear_cache_on_exit = 0
-" set the best match to be the top
-let g:ctrlp_match_window_reversed = 0
-" set max height of match window
-let g:ctrlp_max_height = 20
-" tell ctrlp to ignore some files
-let g:ctrlp_custom_ignore = 'tags$\|\.DS_Store$\|\.git$\|_site$'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GIT SHORTCUTS
