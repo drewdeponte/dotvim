@@ -120,23 +120,32 @@ set showcmd
 " enable syntax
 syntax on
 
-" enable automatic code folder on indent
-set foldmethod=syntax
-
-" do NOT fold by default
-set nofoldenable
-
-" number of levels to auto fold when open a file
-set foldlevel=1
+" Commented these out because they impact performance of opening a file for
+" editing slightly. So, I at least want to keep them out until I find the
+" major performance issue with opening a file for editing.
+" " enable automatic code folder on indent
+" set foldmethod=syntax
+" 
+" " do NOT fold by default
+" set nofoldenable
+" 
+" " number of levels to auto fold when open a file
+" set foldlevel=1
 
 " Set my leader key to be a comma
 let mapleader = ","
 
-" Enable file type detection.
-" " Use the default filetype settings, so that mail gets 'tw' set to 72,
-" " 'cindent' is on in C files, etc.
-" " Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
+" Note: The following command seriously tanks performance of
+" opening at least ruby files for editing. The bundle/vim-rake plugin also
+" triggers `filetype plugin on` which also tanks performance of opening at
+" least ruby files for editing.
+if has("autocmd")
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+endif
 
 " tab completion mode for files, etc.
 set wildmode=list:longest,list:full
