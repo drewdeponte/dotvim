@@ -117,9 +117,6 @@ set backspace=indent,eol,start
 " show incomplete command
 set showcmd
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
 " enable syntax
 syntax on
 
