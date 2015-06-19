@@ -31,9 +31,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/AnsiEsc.vim"]
-	path = bundle/AnsiEsc.vim
-	url = git://github.com/vim-scripts/AnsiEsc.vim.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
