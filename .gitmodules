@@ -52,9 +52,6 @@
 [submodule "bundle/vim-bundler"]
 	path = bundle/vim-bundler
 	url = git@github.com:tpope/vim-bundler.git
-[submodule "bundle/vim-rake"]
-	path = bundle/vim-rake
-	url = git@github.com:tpope/vim-rake.git
 [submodule "bundle/vim-textobj-user"]
 	path = bundle/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
