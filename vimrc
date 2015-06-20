@@ -135,16 +135,16 @@ syntax on
 " Set my leader key to be a comma
 let mapleader = ","
 
-" Note: The following command seriously tanks performance of
-" opening at least ruby files for editing. The bundle/vim-rake plugin also
-" triggers `filetype plugin on` which also tanks performance of opening at
-" least ruby files for editing.
 if has("autocmd")
-  " Enable file type detection.
+  " Enable file type detection and indetation.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+  filetype indent on
+  " Note: I do not use 'filetype plugin indent on' as it seriously tanks
+  " performance of opening at least ruby files for editing. The
+  " bundle/vim-rake plugin also triggers `filetype plugin on` which also tanks
+  " performance of opening at least ruby files for editing.
 endif
 
 " tab completion mode for files, etc.
