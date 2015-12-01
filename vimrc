@@ -285,9 +285,8 @@ imap <c-c> <esc>
 nnoremap <leader><leader> <c-^>
 
 " make pasting correctly from system clip board easier.
-map <leader>p :set paste<CR>^"+p:set nopaste<CR>
-map <leader>P :set paste<CR>^"+P:set nopaste<CR>
-
+map <leader>p :set paste<CR>"+]p:set nopaste<CR>
+map <leader>P :set paste<CR>"+]P:set nopaste<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS TO JUMP TO SPECIFIC TARGETS AND FILES
