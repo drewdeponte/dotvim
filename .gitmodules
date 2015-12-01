@@ -73,9 +73,6 @@
 [submodule "bundle/vim-supertab"]
 	path = bundle/vim-supertab
 	url = git@github.com:ervandew/supertab.git
-[submodule "bundle/vim-multiple-cursors"]
-	path = bundle/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = git@github.com:derekwyatt/vim-scala.git
