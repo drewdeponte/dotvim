@@ -82,3 +82,6 @@
 [submodule "bundle/vim-tmux-runner"]
 	path = bundle/vim-tmux-runner
 	url = git@github.com:christoomey/vim-tmux-runner.git
+[submodule "bundle/vim-multicursor"]
+	path = bundle/vim-multicursor
+	url = https://github.com/paradigm/vim-multicursor.git

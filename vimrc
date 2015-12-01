@@ -163,6 +163,9 @@ set wildmenu
 " set ack.vim to use ag instead of ack
 let g:ackprg = 'ag --nogroup --nocolor --column --vimgrep'
 
+" set vim-multicursor to use Ctrl-C as its quit key command
+let g:multicursor_quit = "<c-c>"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -409,8 +412,19 @@ nnoremap <leader>. :OpenAlternate<cr>
 map <leader>t :call RunAllTestsInCurrentTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunAllRSpecTests()<cr>
-map <leader>c :call RunAllCucumberFeatures()<cr>
-map <leader>w :call RunWipCucumberFeatures()<cr>
 
 " Ping the cursor like an old radar to find it fast
 nnoremap <leader>C :PingCursor<cr>
+
+" Map vim-multicursor calls
+
+" mapping to place a cursors where the normal cursor is currently at
+nnoremap <leader>ci :call MultiCursorPlaceCursor()<cr>
+" mapping to enable multi-cursor mode once you have set all cursors
+nnoremap <leader>cm :call MultiCursorManual()<cr>
+" mapping to remove multi-cursors you have set that you want to cancel
+nnoremap <leader>cr :call MultiCursorRemoveCursors()<cr>
+" mapping to set a cursor at the beginning of each visually selected line
+xnoremap <leader>cv :call MultiCursorVisual()<cr>
+" mapping to prompt for regex and place cursor at beginning of all regex matches
+nnoremap <leader>cs :call MultiCursorSearch('')<cr>
