@@ -85,3 +85,6 @@
 [submodule "bundle/vim-multicursor"]
 	path = bundle/vim-multicursor
 	url = https://github.com/paradigm/vim-multicursor.git
+[submodule "bundle/vim-devnotes"]
+	path = bundle/vim-devnotes
+	url = https://github.com/jodosha/vim-devnotes.git
