@@ -7,10 +7,6 @@ call pathogen#infect()
 " Set the visual bell instead of audible
 set vb
 
-" Set the font when using MacVim.app, this is ignored for console vim as it
-" simply uses the console font.
-set gfn=Monaco:h15
-
 " tell vim NOT to run in Vi compatible mode
 set nocompatible
 
