@@ -216,31 +216,12 @@ augroup END
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" set background=light
-" colorscheme scott
-
 " Tell it to use the solarized color scheme
 " http://ethanschoonover.com/solarized
 " In order to have this work properly in iTerm2 you also need to setup the
 " iTerm2 solarized color scheme.
 set background=light
 colorscheme solarized
-
-" Tell it to use the ir_black color scheme
-" http://blog.toddwerth.com/entries/8
-" set background=dark
-" colorscheme ir_black
-
-" set background=dark
-" colorscheme drew_jellybeans
-
-" colorscheme xoria256
-
-" set background=dark
-" colorscheme herald
-
-" set background=dark
-" colorscheme grb256
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
