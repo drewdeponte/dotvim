@@ -1,10 +1,3 @@
-
-" open to overrides from others
-if filereadable(expand('~/.vimrc-ext'))
-  source ~/.vimrc-ext
-endif
-
-
 " enable pathogen to load all the vim bundles in ~/.vim/bundle/
 call pathogen#infect()
 
