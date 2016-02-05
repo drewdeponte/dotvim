@@ -155,6 +155,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column --vimgrep'
 " set vim-multicursor to use Ctrl-C as its quit key command
 let g:multicursor_quit = "<c-c>"
 
+" set the devnotes directory to my dotvim directory
+let g:devnotes_directory = "/Users/adeponte/.vim/devnotes"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
