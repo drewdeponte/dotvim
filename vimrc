@@ -328,7 +328,7 @@ map <leader>gl :call SelectaCommand("find lib -type f", "", ":e")<cr>
 map <leader>gf :call SelectaCommand("find features -type f", "", ":e")<cr>
 
 " fuzzy-match files except for stuff in tmp/*, log/*, tags
-map <leader>f :call SelectaCommand("find . -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
+map <leader>f :call SelectaCommand("find . -path tags -prune -or -path ./.vim-flavor -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
 map <leader>gt :SelectaTag<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
