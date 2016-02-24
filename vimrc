@@ -158,6 +158,9 @@ let g:multicursor_quit = "<c-c>"
 " set the devnotes directory to my dotvim directory
 let g:devnotes_directory = "/Users/adeponte/.vim/devnotes"
 
+" set test-recall rspec command
+let g:vim_test_recall_rspec_command = 'bundle exec rspec'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
