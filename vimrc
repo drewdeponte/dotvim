@@ -240,12 +240,6 @@ colorscheme alduin
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>y "*y
-" Move around splits with <c-hjkl>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
 " zoom a vim split, <leader>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>

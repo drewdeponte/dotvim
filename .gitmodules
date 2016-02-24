@@ -76,12 +76,6 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = git@github.com:derekwyatt/vim-scala.git
-[submodule "bundle/vim-tmux-navigator"]
-	path = bundle/vim-tmux-navigator
-	url = git@github.com:christoomey/vim-tmux-navigator.git
-[submodule "bundle/vim-tmux-runner"]
-	path = bundle/vim-tmux-runner
-	url = git@github.com:christoomey/vim-tmux-runner.git
 [submodule "bundle/vim-multicursor"]
 	path = bundle/vim-multicursor
 	url = https://github.com/paradigm/vim-multicursor.git
