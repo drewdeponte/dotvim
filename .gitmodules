@@ -82,3 +82,6 @@
 [submodule "bundle/vim-devnotes"]
 	path = bundle/vim-devnotes
 	url = https://github.com/jodosha/vim-devnotes.git
+[submodule "bundle/vim-xcode"]
+	path = bundle/vim-xcode
+	url = https://github.com/gfontenot/vim-xcode.git

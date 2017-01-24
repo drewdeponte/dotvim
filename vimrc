@@ -390,6 +390,11 @@ map <leader>a :call RunAllRSpecTests()<cr>
 " Ping the cursor like an old radar to find it fast
 nnoremap <leader>C :PingCursor<cr>
 
+" XCode
+nnoremap <leader>xb :Xbuild<cr>
+nnoremap <leader>xt :Xtest<cr>
+nnoremap <leader>xr :Xrun<cr>
+
 " Map vim-multicursor calls
 
 " mapping to place a cursors where the normal cursor is currently at
