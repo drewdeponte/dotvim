@@ -226,15 +226,15 @@ augroup END
 
 " Tell it to use the Alduin color scheme
 " https://github.com/AlessandroYorba/Alduin
-let g:alduin_Shout_Windhelm = 1
-colorscheme alduin
+" let g:alduin_Shout_Windhelm = 1
+" colorscheme alduin
 
 " Tell it to use the solarized color scheme
 " http://ethanschoonover.com/solarized
 " In order to have this work properly in iTerm2 you also need to setup the
 " iTerm2 solarized color scheme.
-" set background=light
-" colorscheme solarized
+set background=dark
+colorscheme solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
