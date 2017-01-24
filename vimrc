@@ -110,6 +110,9 @@ set showcmd
 " enable syntax
 syntax on
 
+" let g:completor_racer_binary='/Users/adeponte/.cargo/bin/racer'
+" let g:completor_clang_binary='/usr/bin/clang'
+
 " Commented these out because they impact performance of opening a file for
 " editing slightly. So, I at least want to keep them out until I find the
 " major performance issue with opening a file for editing.
