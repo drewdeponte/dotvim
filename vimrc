@@ -31,7 +31,8 @@ set history=10000
 
 " Set the word wrap character limit, this will force word wrap past the
 " specified column.
-set textwidth=72
+" set textwidth=72
+set textwidth=92
 
 " Set the visual color column. This is usually used to indicate the text wrap
 " boundaries.
