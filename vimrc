@@ -401,6 +401,7 @@ nnoremap <leader>C :PingCursor<cr>
 nnoremap <leader>xb :Xbuild<cr>
 nnoremap <leader>xt :Xtest<cr>
 nnoremap <leader>xr :Xrun<cr>
+nnoremap <leader>xc :Xclean<cr>
 
 " Map vim-multicursor calls
 
