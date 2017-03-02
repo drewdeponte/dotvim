@@ -1,6 +1,9 @@
 " enable pathogen to load all the vim bundles in ~/.vim/bundle/
 call pathogen#infect()
 
+" enable project specific .vimrc files
+set exrc
+
 " set the clipboard to unnamed so it uses the system clipboard
 " set clipboard=unnamed
 
@@ -422,3 +425,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" disable unsafe commands in project specific .vimrc files
+set secure
