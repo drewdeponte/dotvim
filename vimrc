@@ -135,7 +135,7 @@ if has("autocmd")
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
-  filetype indent on
+  filetype plugin indent on
   " Note: I do not use 'filetype plugin indent on' as it seriously tanks
   " performance of opening at least ruby files for editing. The
   " bundle/vim-rake plugin also triggers `filetype plugin on` which also tanks
