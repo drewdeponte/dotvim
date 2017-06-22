@@ -211,6 +211,7 @@ augroup vimrcEx
   autocmd! FileType markdown setlocal spell
   autocmd! FileType gitcommit setlocal spell
   autocmd! FileType text setlocal spell
+  autocmd! FileType slack setlocal spell
 
   " Don't screw up folds when inserting text that might affect them, until
   " " leaving insert mode. Foldmethod is local to the window. Protect against
