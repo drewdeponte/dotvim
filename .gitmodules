@@ -94,3 +94,6 @@
 [submodule "bundle/completor-swift"]
 	path = bundle/completor-swift
 	url = https://github.com/maralla/completor-swift.git
+[submodule "bundle/vim-slack-format"]
+	path = bundle/vim-slack-format
+	url = git@github.com:uptech/vim-slack-format.git
