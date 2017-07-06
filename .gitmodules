@@ -34,3 +34,6 @@
 [submodule "pack/bundle/start/vim-textobj-rubyblock"]
 	path = pack/bundle/start/vim-textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule "pack/bundle/start/vim-xcode"]
+	path = pack/bundle/start/vim-xcode
+	url = https://github.com/gfontenot/vim-xcode.git
