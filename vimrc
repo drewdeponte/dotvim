@@ -1,6 +1,3 @@
-" enable pathogen to load all the vim bundles in ~/.vim/bundle/
-call pathogen#infect()
-
 " enable project specific .vimrc files
 set exrc
 
