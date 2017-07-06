@@ -46,3 +46,6 @@
 [submodule "pack/bundle/start/vim-ack"]
 	path = pack/bundle/start/vim-ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "pack/bundle/start/vim-completor"]
+	path = pack/bundle/start/vim-completor
+	url = https://github.com/maralla/completor.vim.git
