@@ -22,3 +22,6 @@
 [submodule "pack/bundle/start/vim-ping-cursor"]
 	path = pack/bundle/start/vim-ping-cursor
 	url = https://github.com/uptech/vim-ping-cursor.git
+[submodule "pack/bundle/start/vim-slack-format"]
+	path = pack/bundle/start/vim-slack-format
+	url = https://github.com/uptech/vim-slack-format.git
