@@ -19,3 +19,6 @@
 [submodule "pack/bundle/start/vim-cucumber"]
 	path = pack/bundle/start/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
+[submodule "pack/bundle/start/vim-ping-cursor"]
+	path = pack/bundle/start/vim-ping-cursor
+	url = https://github.com/uptech/vim-ping-cursor.git
