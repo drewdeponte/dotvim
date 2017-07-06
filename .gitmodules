@@ -37,3 +37,6 @@
 [submodule "pack/bundle/start/vim-xcode"]
 	path = pack/bundle/start/vim-xcode
 	url = https://github.com/gfontenot/vim-xcode.git
+[submodule "pack/bundle/start/vim-rust"]
+	path = pack/bundle/start/vim-rust
+	url = https://github.com/rust-lang/rust.vim.git
