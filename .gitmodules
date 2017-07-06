@@ -13,3 +13,6 @@
 [submodule "pack/bundle/start/vim-commentary"]
 	path = pack/bundle/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "pack/bundle/start/vim-bundler"]
+	path = pack/bundle/start/vim-bundler
+	url = https://github.com/tpope/vim-bundler.git
