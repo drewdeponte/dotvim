@@ -49,3 +49,6 @@
 [submodule "pack/bundle/start/vim-completor"]
 	path = pack/bundle/start/vim-completor
 	url = https://github.com/maralla/completor.vim.git
+[submodule "pack/bundle/start/vim-completor-swift"]
+	path = pack/bundle/start/vim-completor-swift
+	url = https://github.com/maralla/completor-swift.git
