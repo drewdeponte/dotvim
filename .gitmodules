@@ -40,3 +40,6 @@
 [submodule "pack/bundle/start/vim-rust"]
 	path = pack/bundle/start/vim-rust
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "pack/bundle/start/vim-swift"]
+	path = pack/bundle/start/vim-swift
+	url = https://github.com/keith/swift.vim.git
