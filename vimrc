@@ -414,18 +414,5 @@ nnoremap <leader>xt :Xtest<cr>
 nnoremap <leader>xr :Xrun<cr>
 nnoremap <leader>xc :Xclean<cr>
 
-" Map vim-multicursor calls
-
-" mapping to place a cursors where the normal cursor is currently at
-nnoremap <leader>ci :call MultiCursorPlaceCursor()<cr>
-" mapping to enable multi-cursor mode once you have set all cursors
-nnoremap <leader>cm :call MultiCursorManual()<cr>
-" mapping to remove multi-cursors you have set that you want to cancel
-nnoremap <leader>cr :call MultiCursorRemoveCursors()<cr>
-" mapping to set a cursor at the beginning of each visually selected line
-xnoremap <leader>cv :call MultiCursorVisual()<cr>
-" mapping to prompt for regex and place cursor at beginning of all regex matches
-nnoremap <leader>cs :call MultiCursorSearch('')<cr>
-
 " disable unsafe commands in project specific .vimrc files
 set secure
