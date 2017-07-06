@@ -43,3 +43,6 @@
 [submodule "pack/bundle/start/vim-swift"]
 	path = pack/bundle/start/vim-swift
 	url = https://github.com/keith/swift.vim.git
+[submodule "pack/bundle/start/vim-ack"]
+	path = pack/bundle/start/vim-ack
+	url = https://github.com/mileszs/ack.vim.git

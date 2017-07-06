@@ -153,7 +153,7 @@ set completeopt=menu,preview
 set wildmenu
 
 " set ack.vim to use ag instead of ack
-let g:ackprg = 'ag --nogroup --nocolor --column --vimgrep'
+let g:ackprg = 'rg --vimgrep --no-heading'
 
 " set vim-multicursor to use Ctrl-C as its quit key command
 let g:multicursor_quit = "<c-c>"
