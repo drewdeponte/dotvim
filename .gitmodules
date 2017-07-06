@@ -94,3 +94,6 @@
 [submodule "bundle/vim-slack-format"]
 	path = bundle/vim-slack-format
 	url = git@github.com:uptech/vim-slack-format.git
+[submodule "pack/bundle/start/vim-colors-solarized"]
+	path = pack/bundle/start/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
