@@ -25,3 +25,6 @@
 [submodule "pack/bundle/start/vim-slack-format"]
 	path = pack/bundle/start/vim-slack-format
 	url = https://github.com/uptech/vim-slack-format.git
+[submodule "pack/bundle/start/vim-test-recall"]
+	path = pack/bundle/start/vim-test-recall
+	url = https://github.com/uptech/vim-test-recall.git
