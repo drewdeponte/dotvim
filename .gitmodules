@@ -1,99 +1,54 @@
-[submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
+[submodule "pack/bundle/start/vim-colors-solarized"]
+	path = pack/bundle/start/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-cucumber"]
-	path = bundle/vim-cucumber
-	url = git://github.com/tpope/vim-cucumber.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
-	url = git://github.com/tpope/vim-markdown.git
-[submodule "bundle/vim-rails"]
-	path = bundle/vim-rails
-	url = git://github.com/tpope/vim-rails.git
-[submodule "bundle/ack"]
-	path = bundle/ack
-	url = git://github.com/mileszs/ack.vim.git
-[submodule "bundle/vim-matchit"]
-	path = bundle/vim-matchit
-	url = git://github.com/vim-scripts/matchit.zip.git
-[submodule "bundle/gist-vim"]
-	path = bundle/gist-vim
-	url = git://github.com/mattn/gist-vim.git
-[submodule "bundle/webapi-vim"]
-	path = bundle/webapi-vim
-	url = git://github.com/mattn/webapi-vim.git
-[submodule "bundle/tcomment_vim"]
-	path = bundle/tcomment_vim
-	url = git://github.com/tomtom/tcomment_vim.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/vim-ruby"]
-	path = bundle/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/vim-ruby-refactoring"]
-	path = bundle/vim-ruby-refactoring
-	url = git://github.com/ecomba/vim-ruby-refactoring.git
-[submodule "bundle/vim-test-recall"]
-	path = bundle/vim-test-recall
-	url = git://github.com/cyphactor/vim-test-recall.git
-[submodule "bundle/vim-ping-cursor"]
-	path = bundle/vim-ping-cursor
-	url = git://github.com/cyphactor/vim-ping-cursor.git
-[submodule "bundle/colorschemes"]
-	path = bundle/colorschemes
-	url = git@github.com:flazz/vim-colorschemes.git
-[submodule "bundle/vim-bundler"]
-	path = bundle/vim-bundler
-	url = git@github.com:tpope/vim-bundler.git
-[submodule "bundle/vim-textobj-user"]
-	path = bundle/vim-textobj-user
-	url = git@github.com:kana/vim-textobj-user.git
-[submodule "bundle/vim-textobj-rubyblock"]
-	path = bundle/vim-textobj-rubyblock
-	url = git@github.com:nelstrom/vim-textobj-rubyblock.git
-[submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmate
-	url = git@github.com:garbas/vim-snipmate.git
-[submodule "bundle/vim-addon-mw-utils"]
-	path = bundle/vim-addon-mw-utils
-	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
-[submodule "bundle/vim-tlib"]
-	path = bundle/vim-tlib
-	url = git@github.com:tomtom/tlib_vim.git
-[submodule "bundle/vim-endwise"]
-	path = bundle/vim-endwise
-	url = git@github.com:tpope/vim-endwise.git
-[submodule "bundle/vim-supertab"]
-	path = bundle/vim-supertab
-	url = git@github.com:ervandew/supertab.git
-[submodule "bundle/vim-scala"]
-	path = bundle/vim-scala
-	url = git@github.com:derekwyatt/vim-scala.git
-[submodule "bundle/vim-multicursor"]
-	path = bundle/vim-multicursor
-	url = https://github.com/paradigm/vim-multicursor.git
-[submodule "bundle/vim-devnotes"]
-	path = bundle/vim-devnotes
-	url = https://github.com/jodosha/vim-devnotes.git
-[submodule "bundle/vim-xcode"]
-	path = bundle/vim-xcode
+[submodule "pack/bundle/start/vim-surround"]
+	path = pack/bundle/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "pack/bundle/start/vim-fugitive"]
+	path = pack/bundle/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/bundle/start/vim-markdown"]
+	path = pack/bundle/start/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "pack/bundle/start/vim-commentary"]
+	path = pack/bundle/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "pack/bundle/start/vim-bundler"]
+	path = pack/bundle/start/vim-bundler
+	url = https://github.com/tpope/vim-bundler.git
+[submodule "pack/bundle/start/vim-cucumber"]
+	path = pack/bundle/start/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule "pack/bundle/start/vim-ping-cursor"]
+	path = pack/bundle/start/vim-ping-cursor
+	url = https://github.com/uptech/vim-ping-cursor.git
+[submodule "pack/bundle/start/vim-slack-format"]
+	path = pack/bundle/start/vim-slack-format
+	url = https://github.com/uptech/vim-slack-format.git
+[submodule "pack/bundle/start/vim-test-recall"]
+	path = pack/bundle/start/vim-test-recall
+	url = https://github.com/uptech/vim-test-recall.git
+[submodule "pack/bundle/start/vim-textobj-user"]
+	path = pack/bundle/start/vim-textobj-user
+	url = https://github.com/kana/vim-textobj-user.git
+[submodule "pack/bundle/start/vim-textobj-rubyblock"]
+	path = pack/bundle/start/vim-textobj-rubyblock
+	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule "pack/bundle/start/vim-xcode"]
+	path = pack/bundle/start/vim-xcode
 	url = https://github.com/gfontenot/vim-xcode.git
-[submodule "bundle/rust.vim"]
-	path = bundle/rust.vim
+[submodule "pack/bundle/start/vim-rust"]
+	path = pack/bundle/start/vim-rust
 	url = https://github.com/rust-lang/rust.vim.git
-[submodule "bundle/swift.vim"]
-	path = bundle/swift.vim
+[submodule "pack/bundle/start/vim-swift"]
+	path = pack/bundle/start/vim-swift
 	url = https://github.com/keith/swift.vim.git
-[submodule "bundle/completor.vim"]
-	path = bundle/completor.vim
+[submodule "pack/bundle/start/vim-ack"]
+	path = pack/bundle/start/vim-ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "pack/bundle/start/vim-completor"]
+	path = pack/bundle/start/vim-completor
 	url = https://github.com/maralla/completor.vim.git
-[submodule "bundle/completor-swift"]
-	path = bundle/completor-swift
+[submodule "pack/bundle/start/vim-completor-swift"]
+	path = pack/bundle/start/vim-completor-swift
 	url = https://github.com/maralla/completor-swift.git
-[submodule "bundle/vim-slack-format"]
-	path = bundle/vim-slack-format
-	url = git@github.com:uptech/vim-slack-format.git

@@ -87,42 +87,12 @@ Provides functionality to easily manage surroundings parens, quotes, etc.
 * `ds"` - delete surrounding double quotes
 * `ysiw'` - add surrounding of single quote inside word (iw) where iw is a text object
 
-#### tcomment_vim
-
-Provides easy to use file-type sensible comments.
-[http://github.com/tomtom/tcomment_vim](http://github.com/tomtom/tcomment_vim)
-
-* `gc{motion}` - toggle comments
-* `gC{motion}` - comment region
-* `gcc` - toggle comment current line
-* `gCc` - comment current line
-* `gc` (visual mode) - toggle comments
-* `gC` (visual mode) - comment selected text
-
-#### gist-vim
-
-Provides easy creation of GitHub Gists.
-[http://github.com/mattn/gist-vim](http://github.com/mattn/gist-vim)
-
-* `:Gist` - post current buffer to gist
-* `:'<,'>Gist` - post current selection to gist
-* `:Gist -p` - create private gist
-* `:Gist -P` - create public gist
-* `:Gist -l` - list your public gists
-
 #### ack.vim
 
 Provides interface to Ack from within vim.
 [http://github.com/mileszs/ack.vim](http://github.com/mileszs/ack.vim)
 
 * `:Ack [options] {pattern}` - search for specified pattern showing results in vim quick fix window.
-
-#### vim-rails
-
-Provides bunch of Ruby on Rails specific functionality.
-[http://github.com/tpope/vim-rails](http://github.com/tpope/vim-rails)
-
-* `gf` - gives the standard `gf` command knowledge about partials, fixtures, and much more.
 
 #### vim-markdown
 
