@@ -190,8 +190,7 @@ augroup vimrcEx
   autocmd! BufRead,BufNewFile *.pp setfiletype ruby
   autocmd! BufRead,BufNewFile *.god setfiletype ruby
 
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
-  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.mkd,*.markdown,*.md  set ai formatoptions=tcroqn2 comments=n:&gt; setlocal tw=0 wrap linebreak spell
 
   " Before writing a file check if the path for it exists. If it doesn't then
   " mkdir -p the path so that the file can be saved.
@@ -204,11 +203,9 @@ augroup vimrcEx
 
   " Don't syntax highlight markdown because it's often wrong
   " autocmd! FileType mkd setlocal syn=off
-  autocmd! FileType mkd setlocal spell
-  autocmd! FileType markdown setlocal spell
   autocmd! FileType gitcommit setlocal spell
   autocmd! FileType text setlocal spell
-  autocmd! FileType slack setlocal spell
+  autocmd! FileType slack setlocal tw=0 wrap linebreak spell
 
   " Don't screw up folds when inserting text that might affect them, until
   " " leaving insert mode. Foldmethod is local to the window. Protect against
@@ -332,7 +329,7 @@ map <leader>gl :call SelectaCommand("find lib -type f", "", ":e")<cr>
 map <leader>gf :call SelectaCommand("find features -type f", "", ":e")<cr>
 
 " fuzzy-match files except for stuff in tmp/*, log/*, tags
-map <leader>f :call SelectaCommand("find . -path ./_site -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
+map <leader>f :call SelectaCommand("find . -path ./_site -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
 map <leader>gt :SelectaTag<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -389,7 +386,7 @@ map <leader>n :call RenameFile()<cr>
 " Run a given vim command on the results of alt from a given path.
 " See usage below.
 function! AltCommand(path, vim_command)
-	let l:alternate = system("alt " . a:path)
+	let l:alternate = system("find . -path ./_site -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -type f -print | alt -f - " . a:path)
 	if empty(l:alternate)
 		echo "No alternate file for " . a:path . " exists!"
 	else
@@ -397,9 +394,11 @@ function! AltCommand(path, vim_command)
 	endif
 endfunction
 
-" Find the alternate file for the current path and open it
-nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
 
+" map <leader>f :call SelectaCommand("find . -path ./_site -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
+
+" Find the alternate file for the current path and open it
+nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr> 
 " Map all the run test calls provided by vim-test-recall
 map <leader>t :call RunAllTestsInCurrentTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
