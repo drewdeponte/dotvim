@@ -55,3 +55,6 @@
 [submodule "pack/bundle/start/vim-highlightedyank"]
 	path = pack/bundle/start/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank.git
+[submodule "pack/bundle/start/Jenkinsfile-vim-syntax"]
+	path = pack/bundle/start/Jenkinsfile-vim-syntax
+	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
