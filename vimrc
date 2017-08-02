@@ -190,7 +190,7 @@ augroup vimrcEx
   autocmd! BufRead,BufNewFile *.pp setfiletype ruby
   autocmd! BufRead,BufNewFile *.god setfiletype ruby
 
-  autocmd BufRead *.mkd,*.markdown,*.md  set ai formatoptions=tcroqn2 comments=n:&gt; setlocal tw=0 wrap linebreak spell
+  autocmd BufRead *.mkd,*.markdown,*.md  setl ai formatoptions=tcroqn2 comments=n:&gt tw=0 wrap linebreak spell
 
   " Before writing a file check if the path for it exists. If it doesn't then
   " mkdir -p the path so that the file can be saved.
