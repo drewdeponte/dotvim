@@ -164,6 +164,9 @@ let g:devnotes_directory = "/Users/adeponte/.vim/devnotes"
 " set test-recall rspec command
 let g:vim_test_recall_rspec_command = 'bundle exec rspec'
 
+" set vim-markdown-preview to render github style using grip cmd line tool
+let g:vim_markdown_preview_github=1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -58,3 +58,6 @@
 [submodule "pack/bundle/start/Jenkinsfile-vim-syntax"]
 	path = pack/bundle/start/Jenkinsfile-vim-syntax
 	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
+[submodule "pack/bundle/start/vim-markdown-preview"]
+	path = pack/bundle/start/vim-markdown-preview
+	url = https://github.com/JamshedVesuna/vim-markdown-preview.git
