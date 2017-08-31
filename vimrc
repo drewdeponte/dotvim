@@ -210,6 +210,9 @@ augroup vimrcEx
   autocmd! FileType text setlocal spell
   autocmd! FileType slack setlocal tw=0 wrap linebreak spell
 
+  autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
+  autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs setlocal makeprg=cargo
+
   " Don't screw up folds when inserting text that might affect them, until
   " " leaving insert mode. Foldmethod is local to the window. Protect against
   " " screwing up folding when switching between windows.
