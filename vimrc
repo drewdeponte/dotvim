@@ -109,8 +109,12 @@ set showcmd
 " enable syntax
 syntax on
 
-" let g:completor_racer_binary='/Users/adeponte/.cargo/bin/racer'
-" let g:completor_clang_binary='/usr/bin/clang'
+let g:completor_python_binary='/usr/bin/python'
+let g:completor_racer_binary='/Users/adeponte/.cargo/bin/racer'
+let g:completor_clang_binary='/usr/bin/clang'
+let g:completor_completion_delay=10
+let g:completor_disable_filename=1
+let g:completor_disable_ultisnips=1
 
 " Commented these out because they impact performance of opening a file for
 " editing slightly. So, I at least want to keep them out until I find the
