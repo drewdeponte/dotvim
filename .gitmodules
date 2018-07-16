@@ -46,12 +46,6 @@
 [submodule "pack/bundle/start/vim-ack"]
 	path = pack/bundle/start/vim-ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "pack/bundle/start/vim-completor"]
-	path = pack/bundle/start/vim-completor
-	url = https://github.com/maralla/completor.vim.git
-[submodule "pack/bundle/start/vim-completor-swift"]
-	path = pack/bundle/start/vim-completor-swift
-	url = https://github.com/maralla/completor-swift.git
 [submodule "pack/bundle/start/vim-highlightedyank"]
 	path = pack/bundle/start/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank.git
@@ -61,3 +55,9 @@
 [submodule "pack/bundle/start/vim-markdown-preview"]
 	path = pack/bundle/start/vim-markdown-preview
 	url = https://github.com/JamshedVesuna/vim-markdown-preview.git
+[submodule "pack/bundle/start/completor.vim"]
+	path = pack/bundle/start/completor.vim
+	url = git@github.com:maralla/completor.vim.git
+[submodule "pack/bundle/start/completor-swift"]
+	path = pack/bundle/start/completor-swift
+	url = git@github.com:maralla/completor-swift.git
