@@ -61,3 +61,6 @@
 [submodule "pack/bundle/start/completor-swift"]
 	path = pack/bundle/start/completor-swift
 	url = git@github.com:maralla/completor-swift.git
+[submodule "pack/bundle/start/Zenburn"]
+	path = pack/bundle/start/Zenburn
+	url = https://github.com/jnurmine/Zenburn.git
