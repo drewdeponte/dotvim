@@ -341,7 +341,7 @@ map <leader>gl :call SelectaCommand("find lib -type f", "", ":e")<cr>
 map <leader>gf :call SelectaCommand("find features -type f", "", ":e")<cr>
 
 " fuzzy-match files except for stuff in tmp/*, log/*, tags
-map <leader>f :call SelectaCommand("find . -path './dist' -prune -or -path './.eggs' -prune -or -path './RanchHand.egg-info' -prune -or -name '*.pyc' -prune -or -path ./_site -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
+map <leader>f :call SelectaCommand("find . -path './.build' -prune -or -path './dist' -prune -or -path './.eggs' -prune -or -path './RanchHand.egg-info' -prune -or -name '*.pyc' -prune -or -path ./_site -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./" . expand('%') . " -prune -or -type f -print", "", ":e")<cr>
 map <leader>gt :SelectaTag<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -398,7 +398,8 @@ map <leader>n :call RenameFile()<cr>
 " Run a given vim command on the results of alt from a given path.
 " See usage below.
 function! AltCommand(path, vim_command)
-	let l:alternate = system("find . -name '*.pyc' -prune -or -path ./_site -prune -or -path ./.eggs -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -path ./*.egg-info -prune -or -path ./dist -prune -or -type f -print | alt -f - " . a:path)
+	" let l:alternate = system("find . -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -type f -print | alt -f - " . a:path)
+	let l:alternate = system("alt " . a:path)
 	if empty(l:alternate)
 		echo "No alternate file for " . a:path . " exists!"
 	else
