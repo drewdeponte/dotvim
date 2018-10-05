@@ -249,7 +249,8 @@ augroup END
 " iTerm2 solarized color scheme.
 " set background=dark
 " colorscheme solarized
-colorscheme zenburn
+" colorscheme zenburn
+colorscheme jellybeans
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE

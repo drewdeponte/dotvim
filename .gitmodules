@@ -64,3 +64,6 @@
 [submodule "pack/bundle/start/Zenburn"]
 	path = pack/bundle/start/Zenburn
 	url = https://github.com/jnurmine/Zenburn.git
+[submodule "pack/bundle/start/vim-jellybeans"]
+	path = pack/bundle/start/vim-jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git
