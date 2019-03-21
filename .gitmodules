@@ -22,9 +22,6 @@
 [submodule "pack/bundle/start/vim-ping-cursor"]
 	path = pack/bundle/start/vim-ping-cursor
 	url = https://github.com/uptech/vim-ping-cursor.git
-[submodule "pack/bundle/start/vim-slack-format"]
-	path = pack/bundle/start/vim-slack-format
-	url = https://github.com/uptech/vim-slack-format.git
 [submodule "pack/bundle/start/vim-test-recall"]
 	path = pack/bundle/start/vim-test-recall
 	url = https://github.com/uptech/vim-test-recall.git
@@ -67,3 +64,6 @@
 [submodule "pack/bundle/start/vim-jellybeans"]
 	path = pack/bundle/start/vim-jellybeans
 	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "pack/bundle/start/vim-mjml"]
+	path = pack/bundle/start/vim-mjml
+	url = https://github.com/amadeus/vim-mjml.git
